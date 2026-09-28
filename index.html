@@ -43,8 +43,12 @@ ym(112388441,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:'dataLayer',
 
   function clean(value){return (value||'').trim();}
   function consentAccepted(){
-    return localStorage.getItem('aqueduct-cookie-consent')==='accepted' ||
-           localStorage.getItem('cookieConsent')==='accepted';
+    try {
+      return window.localStorage.getItem('aqueduct-cookie-consent')==='accepted' ||
+             window.localStorage.getItem('cookieConsent')==='accepted';
+    } catch (e) {
+      return false;
+    }
   }
   function currentAttribution(){
     var params=new URLSearchParams(location.search);
