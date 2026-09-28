@@ -137,6 +137,9 @@ ym(112388441,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:'dataLayer',
     try{
       var attribution=resolveAttribution()||initialAttribution;
       var data=new FormData(form);
+      data.set('access_key','bfe9305d-f7c6-4213-a6e9-f174d8bb33d2');
+      data.set('subject','Новая заявка - Aqueduct Group');
+      data.set('from_name','Aqueduct Group - заявка с сайта');
       data.set('Source',attribution.source||'direct');
       data.set('Medium',attribution.medium||'none');
       data.set('Campaign',attribution.campaign||'none');
